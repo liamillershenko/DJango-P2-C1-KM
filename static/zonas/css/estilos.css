@@ -1,0 +1,92 @@
+/* Identidad visual EcoEnergy — construida sobre Bootstrap 5 */
+
+:root {
+    --eco-green: #1f7a4d;
+    --eco-green-dark: #14532d;
+    --eco-green-soft: #e6f4ec;
+}
+
+body {
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    background-color: #f7f9f8;
+}
+
+.bg-eco {
+    background-color: var(--eco-green) !important;
+}
+
+.text-eco {
+    color: var(--eco-green) !important;
+}
+
+.bg-eco-soft {
+    background-color: var(--eco-green-soft) !important;
+}
+
+.btn-eco {
+    background-color: var(--eco-green);
+    border-color: var(--eco-green);
+    color: #fff;
+}
+
+.btn-eco:hover,
+.btn-eco:focus {
+    background-color: var(--eco-green-dark);
+    border-color: var(--eco-green-dark);
+    color: #fff;
+}
+
+.hero {
+    background: linear-gradient(135deg, var(--eco-green) 0%, var(--eco-green-dark) 100%);
+}
+
+.stat-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.zona-card,
+.metric-card,
+.stat-card {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.zona-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Los estados nunca dependen solo del color: siempre llevan texto e ícono (CA-12) */
+.badge-normal {
+    background-color: #198754;
+    color: #fff;
+    padding: 0.45em 0.75em;
+}
+
+.badge-alerta {
+    background-color: #dc3545;
+    color: #fff;
+    padding: 0.45em 0.75em;
+}
+
+.navbar .nav-link.active {
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* Tablas extensas: scroll interno sin desbordar la página (CA-10) */
+.tabla-scroll {
+    max-height: 420px;
+    overflow-y: auto;
+}
+
+.breadcrumb {
+    background: transparent;
+    padding: 0;
+}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Zona no encontrada | EcoEnergy{% endblock %}
+
+{% block content %}
+<div class="text-center py-5">
+    <i class="bi bi-exclamation-triangle display-1 text-warning"></i>
+    <h1 class="display-5 fw-bold mt-3">404</h1>
+    <p class="lead text-muted">La zona que buscas no existe o fue eliminada.</p>
+    <a href="{% url 'zonas:listado' %}" class="btn btn-eco mt-2">
+        <i class="bi bi-arrow-left"></i> Volver al listado de zonas
+    </a>
+</div>
+{% endblock %}

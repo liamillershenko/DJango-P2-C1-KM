@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block title %}{{ zona.nombre }} | EcoEnergy{% endblock %}
+
+{% block content %}
+<nav aria-label="breadcrumb" class="mb-3">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'zonas:listado' %}">Zonas</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ zona.nombre }}</li>
+    </ol>
+</nav>
+
+<div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-4">
+    <div>
+        <h1 class="h3 fw-bold mb-1">{{ zona.nombre }}</h1>
+        <p class="text-muted mb-0">Detalle de consumo y dispositivos instalados</p>
+    </div>
+    {% if estado == "ALERTA" %}
+        <span class="badge badge-alerta fs-6"><i class="bi bi-exclamation-triangle-fill"></i> ALERTA</span>
+    {% else %}
+        <span class="badge badge-normal fs-6"><i class="bi bi-check-circle-fill"></i> NORMAL</span>
+    {% endif %}
+</div>
+
+<div class="row g-3 mb-4">
+    <div class="col-6 col-lg-3">
+        <div class="card metric-card h-100 shadow-sm border-0 text-center">
+            <div class="card-body">
+                <i class="bi bi-speedometer2 text-eco fs-3"></i>
+                <p class="text-muted small mb-0 mt-1">Límite</p>
+                <p class="fs-4 fw-bold mb-0">{{ zona.limite_kwh }} kWh</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-lg-3">
+        <div class="card metric-card h-100 shadow-sm border-0 text-center">
+            <div class="card-body">
+                <i class="bi bi-lightning-charge text-eco fs-3"></i>
+                <p class="text-muted small mb-0 mt-1">Consumo total</p>
+                <p class="fs-4 fw-bold mb-0">{{ consumo_total }} kWh</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-lg-3">
+        <div class="card metric-card h-100 shadow-sm border-0 text-center">
+            <div class="card-body">
+                <i class="bi bi-cpu text-eco fs-3"></i>
+                <p class="text-muted small mb-0 mt-1">Dispositivos</p>
+                <p class="fs-4 fw-bold mb-0">{{ cantidad_dispositivos }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-lg-3">
+        <div class="card metric-card h-100 shadow-sm border-0 text-center">
+            <div class="card-body">
+                {% if estado == "ALERTA" %}
+                    <i class="bi bi-exclamation-triangle text-danger fs-3"></i>
+                {% else %}
+                    <i class="bi bi-check-circle text-success fs-3"></i>
+                {% endif %}
+                <p class="text-muted small mb-0 mt-1">Estado</p>
+                <p class="fs-4 fw-bold mb-0">{{ estado }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card shadow-sm border-0">
+    <div class="card-header bg-white fw-semibold">
+        <i class="bi bi-list-ul"></i> Dispositivos instalados
+    </div>
+    <div class="card-body p-0">
+        {% if dispositivos %}
+        <div class="table-responsive tabla-scroll">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th>Dispositivo</th>
+                        <th>Categoría</th>
+                        <th class="text-end">Consumo (kWh)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for dispositivo in dispositivos %}
+                    <tr>
+                        <td>{{ dispositivo.nombre }}</td>
+                        <td>
+                            <span class="badge bg-secondary-subtle text-dark-emphasis">
+                                {{ dispositivo.categoria_nombre }}
+                            </span>
+                        </td>
+                        <td class="text-end">{{ dispositivo.consumo_kwh }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+        <div class="text-center py-5">
+            <i class="bi bi-inboxes display-4 text-muted"></i>
+            <p class="lead text-muted mt-3 mb-0">Esta zona no tiene dispositivos registrados.</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<a href="{% url 'zonas:listado' %}" class="btn btn-outline-secondary mt-4">
+    <i class="bi bi-arrow-left"></i> Volver al listado
+</a>
+{% endblock %}

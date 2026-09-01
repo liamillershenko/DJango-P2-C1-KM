@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}Inicio | EcoEnergy{% endblock %}
+
+{% block content %}
+<section class="hero rounded-4 p-5 mb-4 text-white">
+    <div class="row align-items-center">
+        <div class="col-lg-8">
+            <h1 class="display-5 fw-bold"><i class="bi bi-lightning-charge-fill"></i> EcoEnergy</h1>
+            <p class="lead mb-4">
+                Consulta las zonas de consumo energético de tu empresa, revisa los
+                dispositivos instalados en cada una y reconoce oportunamente los
+                estados de alerta.
+            </p>
+            <a href="{% url 'zonas:listado' %}" class="btn btn-light btn-lg fw-semibold">
+                <i class="bi bi-geo-alt"></i> Ver zonas de consumo
+            </a>
+        </div>
+    </div>
+</section>
+
+<div class="row g-4">
+    <div class="col-md-6">
+        <div class="card stat-card h-100 shadow-sm border-0">
+            <div class="card-body d-flex align-items-center gap-3">
+                <div class="stat-icon bg-eco-soft text-eco">
+                    <i class="bi bi-geo-alt-fill fs-3"></i>
+                </div>
+                <div>
+                    <p class="text-muted mb-0 small">Zonas registradas</p>
+                    <p class="fs-2 fw-bold mb-0">{{ total_zonas }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card stat-card h-100 shadow-sm border-0">
+            <div class="card-body d-flex align-items-center gap-3">
+                <div class="stat-icon bg-eco-soft text-eco">
+                    <i class="bi bi-cpu-fill fs-3"></i>
+                </div>
+                <div>
+                    <p class="text-muted mb-0 small">Dispositivos monitoreados</p>
+                    <p class="fs-2 fw-bold mb-0">{{ total_dispositivos }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-5">
+    <h2 class="h4 mb-3">¿Cómo funciona?</h2>
+    <div class="row g-3">
+        <div class="col-md-4">
+            <div class="p-3 border rounded-3 h-100">
+                <span class="badge bg-eco mb-2">1</span>
+                <p class="mb-0">Elige una zona desde el listado para ver su detalle.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-3 border rounded-3 h-100">
+                <span class="badge bg-eco mb-2">2</span>
+                <p class="mb-0">Revisa los dispositivos, su categoría y consumo en kWh.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-3 border rounded-3 h-100">
+                <span class="badge bg-eco mb-2">3</span>
+                <p class="mb-0">Reconoce si la zona está en estado NORMAL o ALERTA.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

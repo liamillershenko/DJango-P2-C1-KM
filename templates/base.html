@@ -1,0 +1,58 @@
+{% load static django_bootstrap5 %}
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}EcoEnergy{% endblock %}</title>
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{% static 'zonas/css/estilos.css' %}">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <header class="navbar navbar-expand-lg navbar-dark bg-eco shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="{% url 'zonas:inicio' %}">
+                <i class="bi bi-lightning-charge-fill"></i>
+                <span>EcoEnergy</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false"
+                    aria-label="Abrir navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link {% if activo == 'inicio' %}active{% endif %}"
+                           href="{% url 'zonas:inicio' %}">
+                            <i class="bi bi-house-door"></i> Inicio
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if activo == 'zonas' %}active{% endif %}"
+                           href="{% url 'zonas:listado' %}">
+                            <i class="bi bi-geo-alt"></i> Zonas
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="container flex-grow-1 py-4">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="bg-white border-top py-3 mt-auto">
+        <div class="container text-center text-muted small">
+            EcoEnergy &middot; Monitoreo de consumo energético para pymes
+            <br>
+            Programación Back End · TI3041 · Evaluación Sumativa I · Fase 1
+        </div>
+    </footer>
+
+    {% bootstrap_javascript %}
+</body>
+</html>

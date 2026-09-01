@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Zonas | EcoEnergy{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+    <div>
+        <h1 class="h3 fw-bold mb-1"><i class="bi bi-geo-alt"></i> Zonas de consumo</h1>
+        <p class="text-muted mb-0">
+            {{ zonas|length }} zona{{ zonas|length|pluralize }} registrada{{ zonas|length|pluralize }} en el sistema.
+        </p>
+    </div>
+</div>
+
+{% if zonas %}
+<div class="row g-4">
+    {% for zona in zonas %}
+    <div class="col-md-6 col-lg-4">
+        <div class="card zona-card h-100 shadow-sm border-0">
+            <div class="card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-start mb-2 gap-2">
+                    <h2 class="h5 fw-bold mb-0">{{ zona.nombre }}</h2>
+                    {% if zona.estado == "ALERTA" %}
+                        <span class="badge badge-alerta text-nowrap">
+                            <i class="bi bi-exclamation-triangle-fill"></i> ALERTA
+                        </span>
+                    {% else %}
+                        <span class="badge badge-normal text-nowrap">
+                            <i class="bi bi-check-circle-fill"></i> NORMAL
+                        </span>
+                    {% endif %}
+                </div>
+                <ul class="list-unstyled small text-muted mb-3 flex-grow-1">
+                    <li class="mb-1"><i class="bi bi-speedometer2"></i> Límite: <strong>{{ zona.limite_kwh }} kWh</strong></li>
+                    <li class="mb-1"><i class="bi bi-lightning-charge"></i> Consumo actual: <strong>{{ zona.consumo_total }} kWh</strong></li>
+                    <li><i class="bi bi-cpu"></i> Dispositivos: <strong>{{ zona.cantidad_dispositivos }}</strong></li>
+                </ul>
+                <a href="{% url 'zonas:detalle' zona.id %}" class="btn btn-eco mt-auto">
+                    Ver detalle <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="text-center py-5">
+    <i class="bi bi-inboxes display-1 text-muted"></i>
+    <p class="lead text-muted mt-3">No hay zonas disponibles.</p>
+</div>
+{% endif %}
+{% endblock %}
