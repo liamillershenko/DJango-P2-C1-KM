@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "nombre": "Climatizacion",
+        "descripcion": "Equipos de aire acondicionado y ventilacion"
+    },
+    {
+        "id": 2,
+        "nombre": "Iluminacion",
+        "descripcion": "Sistemas de luminarias interiores y exteriores"
+    },
+    {
+        "id": 3,
+        "nombre": "Computo",
+        "descripcion": "Servidores, computadores y equipos de red"
+    },
+    {
+        "id": 4,
+        "nombre": "Refrigeracion",
+        "descripcion": "Equipos de frio industrial y comercial"
+    }
+]

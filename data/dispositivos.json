@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "nombre": "Aire Acondicionado Bodega",
+        "consumo_kwh": 120.5,
+        "zona_id": 1,
+        "categoria_id": 1
+    },
+    {
+        "id": 2,
+        "nombre": "Iluminacion LED Bodega",
+        "consumo_kwh": 45.0,
+        "zona_id": 1,
+        "categoria_id": 2
+    },
+    {
+        "id": 3,
+        "nombre": "Refrigerador Industrial",
+        "consumo_kwh": 210.0,
+        "zona_id": 1,
+        "categoria_id": 4
+    },
+    {
+        "id": 4,
+        "nombre": "Computadores Oficina",
+        "consumo_kwh": 150.0,
+        "zona_id": 2,
+        "categoria_id": 3
+    },
+    {
+        "id": 5,
+        "nombre": "Aire Acondicionado Oficina",
+        "consumo_kwh": 100.0,
+        "zona_id": 2,
+        "categoria_id": 1
+    },
+    {
+        "id": 6,
+        "nombre": "Iluminacion Oficina",
+        "consumo_kwh": 80.0,
+        "zona_id": 2,
+        "categoria_id": 2
+    },
+    {
+        "id": 7,
+        "nombre": "Servidores Rack A",
+        "consumo_kwh": 95.0,
+        "zona_id": 3,
+        "categoria_id": 3
+    },
+    {
+        "id": 8,
+        "nombre": "Aire Acondicionado Sala Servidores",
+        "consumo_kwh": 60.0,
+        "zona_id": 3,
+        "categoria_id": 1
+    }
+]
