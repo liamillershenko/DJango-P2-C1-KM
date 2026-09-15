@@ -1,12 +1,9 @@
-# EcoEnergy · Fase 1
+# EcoEnergy 
 
 Aplicación Django del lado del servidor para EcoEnergy: permite a pequeñas y
 medianas empresas **consultar zonas de consumo energético** y **revisar el
 detalle de los dispositivos instalados en cada una**, usando archivos JSON
 como fuente de datos.
-
-> Proyecto académico — Programación Back End (TI3041), INACAP.
-> Evaluación Sumativa I · Fase 1.
 
 ## Requisitos previos
 
@@ -18,7 +15,6 @@ como fuente de datos.
 
 ```bash
 # 1. Clonar el repositorio
-git clone https://github.com/liamillershenko/DJango-P2-C1-KM.git
 cd ecoenergy-backend
 
 # 2. Crear el entorno virtual
