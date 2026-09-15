@@ -15,7 +15,7 @@ como fuente de datos.
 
 ```bash
 # 1. Clonar el repositorio
-cd ecoenergy-backend
+cd DJango-P2-C1-KM
 
 # 2. Crear el entorno virtual
 python -m venv .venv
