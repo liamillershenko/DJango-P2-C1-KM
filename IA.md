@@ -36,7 +36,7 @@ documentación (`README.md`, `ANALISIS.md`, este archivo).
   proyecto, porque no cuenta con Django instalado ni acceso a internet
   para instalarlo.
 
-## ⚠️ Responsabilidad pendiente del estudiante
+## Responsabilidad pendiente del estudiante
 
 El enunciado es explícito: *"el estudiante debe seleccionar, adaptar,
 integrar y probar la respuesta"* y *"copiar una salida sin comprenderla
@@ -56,7 +56,3 @@ activo):
 5. Reemplazar esta sección con sus propias pruebas y capturas/resultados
    reales antes de registrar el commit de entrega.
 
-## Cambios propios (a completar por el estudiante)
-
-_Espacio para que el estudiante registre qué modificó, qué comprobó y
-qué decidió cambiar respecto a la propuesta inicial de la IA._

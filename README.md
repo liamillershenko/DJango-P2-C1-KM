@@ -18,7 +18,7 @@ como fuente de datos.
 
 ```bash
 # 1. Clonar el repositorio
-git clone <URL_DEL_REPOSITORIO>
+git clone https://github.com/liamillershenko/DJango-P2-C1-KM.git
 cd ecoenergy-backend
 
 # 2. Crear el entorno virtual
