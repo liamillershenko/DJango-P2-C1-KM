@@ -15,7 +15,7 @@ como fuente de datos.
 
 ```bash
 # 1. Clonar el repositorio
-git clone 
+git clone https://github.com/liamillershenko/DJango-P2-C1-KM.git
 cd DJango-P2-C1-KM
 
 # 2. Crear el entorno virtual
